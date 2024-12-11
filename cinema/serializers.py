@@ -113,9 +113,3 @@ class MovieSessionListSerializer(MovieSessionSerializer):
 class MovieSessionDetailSerializer(MovieSessionSerializer):
     movie = MovieListSerializer(read_only=True)
     cinema_hall = CinemaHallSerializer(read_only=True)
-
-    class Meta(MovieSessionSerializer.Meta):
-        fields = MovieSessionSerializer.Meta.fields + (
-            "movie",
-            "cinema_hall"
-        )
